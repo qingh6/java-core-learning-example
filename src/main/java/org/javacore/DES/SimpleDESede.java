@@ -4,13 +4,10 @@ import java.io.UnsupportedEncodingException;
 import java.security.Key;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
-
-
 /**
  * DES 对称加密
  */
 public class SimpleDESede {
-
     public static void main(String[] args) throws Exception {
         // TODO 自动生成方法存根
         String testMassage = "this is a 测试.";
