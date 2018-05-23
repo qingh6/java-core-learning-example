@@ -16,6 +16,7 @@ public class Bytes2String {
     public static void main(String[] args){
         String strBook ="艺";
         String strNumber ="12367";
+        int intNumber =1234567;
         String strZifu ="abZ";
         byte[] bookBytes;
         byte[] numberBytes;
@@ -36,7 +37,6 @@ public class Bytes2String {
             zifuBytes = strZifu.getBytes("GBK");
             System.out.println("字符如下:");
             for (int i=0;i<zifuBytes.length;i++){
-
                 System.out.print(zifuBytes[i] + " ");
             }
             //字节转换成字符串
