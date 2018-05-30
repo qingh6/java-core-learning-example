@@ -1,0 +1,20 @@
+1）ipMack包下：
+    GetIpMain：获取电脑的IP地址
+    GetMacMain：获取电脑的Mac地址
+
+2）xml2json包：
+    xml和json互相转换
+
+3）utils包：
+    XML相关的工具类
+
+4）DES包：
+    des加密
+
+5）ioio包
+    字节转换成String
+    文件输出测试
+
+6）io
+    FileT 文件夹的创建
+    TextFile 文本文件内容的读写
