@@ -13,7 +13,7 @@ import java.security.SecureRandom;
 public class AesSecurity {
 
     private static String password = "12345678";
-
+    private static String password_lqh = "12345678刘清华";
     public static void main(String[] args) {
         String content = "1111111111111";
         // 加密
