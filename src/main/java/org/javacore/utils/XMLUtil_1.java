@@ -4,7 +4,7 @@
  */
 package org.javacore.utils;
 
-import org.apache.commons.io.IOUtils;
+//import org.apache.commons.io.IOUtils;
 
 
 
@@ -79,7 +79,7 @@ public class XMLUtil_1 {
 		} catch (JAXBException | UnsupportedEncodingException e) {
 			throw new RuntimeException("Error when marshalling", e);
 		} finally {
-			IOUtils.closeQuietly(baos);
+//			IOUtils.closeQuietly(baos);
 		}
 	}
 
@@ -93,7 +93,7 @@ public class XMLUtil_1 {
 		} catch (JAXBException | IOException e) {
 			throw new RuntimeException("Error when marshalling", e);
 		} finally {
-			IOUtils.closeQuietly(fout);
+//			IOUtils.closeQuietly(fout);
 		}
 	}
 }

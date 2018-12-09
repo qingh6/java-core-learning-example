@@ -2,7 +2,7 @@ package org.javacore.xml2json;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.commons.io.IOUtils;
+//import org.apache.commons.io.IOUtils;
 import org.javacore.utils.XMLUtil_1;
 import org.javacore.xml2json.domain.ZhiMaWatchListDetailXml;
 import org.javacore.xml2json.domain.ZmWatchListDetail;
@@ -63,60 +63,60 @@ public class Xml2JsonMain {
             "\t</ZhiMaWatchList>\n" +
             "</ZmxyResponse>";
         try {
-            xml2Json(response);
+//            xml2Json(response);
         } catch (Exception e) {
             System.out.println("错误！");
         }
 //         testJson2String();
     }
 
-    public static void xml2Json(String response) throws Exception {
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        ZmWatchXml xml = XMLUtil_1.fromXML(ZmWatchXml.class, response);
-        if (xml != null) {
-            ZmWatchListResponse zmResponse = new ZmWatchListResponse();
-            zmResponse.setSuccess(true);
-            zmResponse.setBizNo(xml.getZmWatchList().getBizNo());
-            zmResponse.setIsMatched("Y".equals(xml.getZmWatchList().getIsMatched()) ? true : false);
-
-//            if(!CollectionUtils.isEmpty(xml.getZmWatchList().getZhiMaWatchListDetails())){
-            if (1 == 1) {
-                List<ZmWatchListDetail> codes = new ArrayList<>();
-                for (int i = 0; i < xml.getZmWatchList().getZhiMaWatchListDetails().size(); i++) {
-                    ZhiMaWatchListDetailXml zhiMaWatchListDetailXml = xml.getZmWatchList().getZhiMaWatchListDetails().get(i);
-                    String date = zhiMaWatchListDetailXml.getRefreshTime();
-//                    logger.info("时间：{}",date);
-                    ZmWatchListDetail zmWatchListDetail = new ZmWatchListDetail(zhiMaWatchListDetailXml.getBizCode(),
-                        zhiMaWatchListDetailXml.getCode(),
-                        zhiMaWatchListDetailXml.getZhiMaWatchListExtendInfos(),
-                        zhiMaWatchListDetailXml.getLevel(),
-                        zhiMaWatchListDetailXml.getRefreshTime(),
-                        "Y".equals(zhiMaWatchListDetailXml.getSettlement()) ? true : false,
-                        zhiMaWatchListDetailXml.getStatement(),
-                        zhiMaWatchListDetailXml.getStatus(),
-                        zhiMaWatchListDetailXml.getType());
-                    codes.add(zmWatchListDetail);
-                }
-                zmResponse.setDetails(codes);
-
-            }
-
-            response = objectMapper.writeValueAsString(zmResponse);
-        }
-    }
-
-    public String testJson2String() throws Exception {
-        String response = JSON.parseObject(IOUtils.toString(getClass().getResourceAsStream("/testRuleDetailResult.json"), Charset.forName("UTF-8")), String.class);
-        return response;
-    }
-
-    static class Xml {
-        public String testJson2String() throws Exception {
-            String response = JSON.parseObject(IOUtils.toString(getClass().getResourceAsStream("/testRuleDetailResult.json"), Charset.forName("UTF-8")), String.class);
-            return response;
-        }
-    }
+//    public static void xml2Json(String response) throws Exception {
+//        ObjectMapper objectMapper = new ObjectMapper();
+//
+//        ZmWatchXml xml = XMLUtil_1.fromXML(ZmWatchXml.class, response);
+//        if (xml != null) {
+//            ZmWatchListResponse zmResponse = new ZmWatchListResponse();
+//            zmResponse.setSuccess(true);
+//            zmResponse.setBizNo(xml.getZmWatchList().getBizNo());
+//            zmResponse.setIsMatched("Y".equals(xml.getZmWatchList().getIsMatched()) ? true : false);
+//
+////            if(!CollectionUtils.isEmpty(xml.getZmWatchList().getZhiMaWatchListDetails())){
+//            if (1 == 1) {
+//                List<ZmWatchListDetail> codes = new ArrayList<>();
+//                for (int i = 0; i < xml.getZmWatchList().getZhiMaWatchListDetails().size(); i++) {
+//                    ZhiMaWatchListDetailXml zhiMaWatchListDetailXml = xml.getZmWatchList().getZhiMaWatchListDetails().get(i);
+//                    String date = zhiMaWatchListDetailXml.getRefreshTime();
+////                    logger.info("时间：{}",date);
+//                    ZmWatchListDetail zmWatchListDetail = new ZmWatchListDetail(zhiMaWatchListDetailXml.getBizCode(),
+//                        zhiMaWatchListDetailXml.getCode(),
+//                        zhiMaWatchListDetailXml.getZhiMaWatchListExtendInfos(),
+//                        zhiMaWatchListDetailXml.getLevel(),
+//                        zhiMaWatchListDetailXml.getRefreshTime(),
+//                        "Y".equals(zhiMaWatchListDetailXml.getSettlement()) ? true : false,
+//                        zhiMaWatchListDetailXml.getStatement(),
+//                        zhiMaWatchListDetailXml.getStatus(),
+//                        zhiMaWatchListDetailXml.getType());
+//                    codes.add(zmWatchListDetail);
+//                }
+//                zmResponse.setDetails(codes);
+//
+//            }
+//
+//            response = objectMapper.writeValueAsString(zmResponse);
+//        }
+//    }
+//
+//    public String testJson2String() throws Exception {
+//        String response = JSON.parseObject(IOUtils.toString(getClass().getResourceAsStream("/testRuleDetailResult.json"), Charset.forName("UTF-8")), String.class);
+//        return response;
+//    }
+//
+//    static class Xml {
+//        public String testJson2String() throws Exception {
+//            String response = JSON.parseObject(IOUtils.toString(getClass().getResourceAsStream("/testRuleDetailResult.json"), Charset.forName("UTF-8")), String.class);
+//            return response;
+//        }
+//    }
 
 
 }

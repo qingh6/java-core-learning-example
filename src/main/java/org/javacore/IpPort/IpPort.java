@@ -19,6 +19,12 @@ public class IpPort {
     private String destIP_Port_4="66.114.0.64:19904";
     public static void main(String[] args) {
 
+        String httpString = "http://11.112.0.5:8083/v1/v3333333/4444555/ttttttttttttt666gfdsgfdsgfdshsj/fgdsgfdsgdfgdfds";
+        String sssString ="";
+        if (httpString.contains("11.112.0.5:8083")){
+
+
+        }
         origIp2destIp("11.112.0.53:8083");
     }
     public static String origIp2destIp(String ip_port){
