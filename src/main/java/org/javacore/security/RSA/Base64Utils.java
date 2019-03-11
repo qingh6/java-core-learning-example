@@ -1,6 +1,6 @@
 package org.javacore.security.RSA;
 
-import it.sauronsoftware.base64.Base64;
+//import it.sauronsoftware.base64.Base64;
 
 import java.io.*;
 
@@ -23,7 +23,8 @@ public class Base64Utils {
      * @throws Exception
      */
     public static byte[] decode(String base64) throws Exception {
-        return Base64.decode(base64.getBytes());
+       // return Base64.decode(base64.getBytes());
+        return null;
     }
 
     /** *//**
@@ -35,8 +36,9 @@ public class Base64Utils {
      * @return
      * @throws Exception
      */
-    public static String encode(byte[] bytes) throws Exception {
-        return new String(Base64.encode(bytes));
+     public static String encode(byte[] bytes) throws Exception {
+            //return new String(Base64.encode(bytes));
+         return null;
     }
 
     /** *//**
